@@ -1,20 +1,23 @@
-# AI Platform React
+# Simple One-File React App
 
-Welcome to the **AI Platform React** project!  
-This React app provides a simple UI to access AI-powered tools: a LinkedIn Post Generator and an OpenAI Assistant. It's built with React Router for navigation and styled with Tailwind CSS.
-
----
+This is a very basic React app with only one component: `App.js`.
 
 ## Features
 
-- **Home Page**: Welcome screen with navigation buttons to AI tools.
-- **LinkedIn Post Generator**: Generate professional LinkedIn posts powered by AI.
-- **OpenAI Assistant**: Chat and interact with OpenAI's API for various AI-assisted tasks.
-- **Back Button**: Navigate back easily to the home screen from tools.
+- Single React functional component
+- Uses JSX and a dynamic name
 
----
+## Setup Instructions
 
+### Prerequisites
 
-# Rename this file to '.env' and add your OpenAI API key here
+- Node.js and npm installed
+- Create React App or Vite setup
 
-VITE_GREETING=your_ai_api_key_here
+### Run the App
+
+1. Create a React app (if not done yet):
+
+```bash
+npx create-react-app my-app
+cd my-app
