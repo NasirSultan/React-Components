@@ -1,12 +1,10 @@
-import React from 'react';
+
 
 function App() {
-  const name = 'Nasir';
-
   return (
-    <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+    <div className="App">
       <h1>Welcome to My React App</h1>
-      <p>Hello, {name}! 👋</p>
+      <p>visti on branches to see topics</p>
     </div>
   );
 }
