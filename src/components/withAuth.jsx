@@ -1,6 +1,6 @@
-// src/components/withAuth.js
 import React from 'react';
 
+// HOC to protect a component by checking for a valid user
 const withAuth = (WrappedComponent) => {
   return function AuthWrapper(props) {
     if (!props.user) {
