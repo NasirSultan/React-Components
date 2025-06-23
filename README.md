@@ -1,25 +1,85 @@
-# ss Simple One-File React App
 
-This project consists of a basic **React component**.  
-Each React component can represent a **branch of your application**, allowing you to build scalable UIs step-by-step.
+# Render Props & Function Props in React
 
-## ✨ Features
+This project demonstrates two common patterns in React:
 
-- Single React functional component
-- Uses JSX and a dynamic name
-- Easily extendable: each component can act as a branch/module
+1. Function as Prop – Passing functions to child components
+2. Render Props – Passing functions as children for more control
 
-## ⚙️ Setup Instructions
+Also included: abstraction of shared behavior (like hover state) using render props.
 
-### 🔧 Prerequisites
+---
 
-- Node.js and npm installed
-- Create React App or Vite setup
+## Folder Structure
 
-### 🚀 Run the App
+```
 
-1. Create a React app (if not already created):
+src/
+├── components/
+│   ├── ParentWithPropFn.jsx
+│   ├── ChildWithPropFn.jsx
+│   ├── ParentWithRenderProp.jsx
+│   ├── ChildWithRenderProp.jsx
+│   └── SharedBehaviorDemo.jsx
+└── App.jsx
 
-```bash
-npx create-react-app my-app
-cd my-app
+````
+
+---
+
+## 1. Function as Prop
+
+Parent passes a function to child for dynamic rendering.
+
+```jsx
+<Child renderFn={(text) => <p>{text}</p>} />
+````
+
+Child uses it like:
+
+```jsx
+{renderFn("From child")}
+```
+
+Use when the parent controls part of the child’s rendering.
+
+---
+
+## 2. Render Props
+
+Pass a function as a child to get full control over rendering.
+
+```jsx
+<Child>
+  {(data) => <p>{data}</p>}
+</Child>
+```
+
+Child calls `children(data)`.
+
+Good for reusable logic with custom rendering.
+
+---
+
+## 3. Abstracting Shared Behavior
+
+`SharedBehaviorDemo.jsx` shows a reusable `Hoverable` component:
+
+```jsx
+<Hoverable>
+  {(hovered) => <div>{hovered ? "On" : "Off"}</div>}
+</Hoverable>
+```
+
+Useful for hover, toggle, tracking, etc.
+
+---
+
+## How to Run
+
+1. Install dependencies
+   `npm install`
+
+2. Start the dev server
+   `npm run dev`
+
