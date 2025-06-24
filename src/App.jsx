@@ -1,10 +1,14 @@
-
+import React from "react";
+import BuggyComponent from "./components/BuggyComponent";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Welcome to My React App</h1>
-      <p>visti on branches to see topics</p>
+    <div>
+      <h1>React Error Boundary Demo</h1>
+      <ErrorBoundary>
+        <BuggyComponent />
+      </ErrorBoundary>
     </div>
   );
 }
