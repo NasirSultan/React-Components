@@ -1,16 +1,13 @@
 import React from "react";
-import BuggyComponent from "./components/BuggyComponent";
-import ErrorBoundary from "./components/ErrorBoundary";
+import MainContent from "./components/MainContent";
 
-function App() {
+const App = () => {
   return (
-    <div>
-      <h1>React Error Boundary Demo</h1>
-      <ErrorBoundary>
-        <BuggyComponent />
-      </ErrorBoundary>
+    <div style={{ padding: "20px" }}>
+      <h1>Functional Error Boundary Demo</h1>
+      <MainContent />
     </div>
   );
-}
+};
 
 export default App;
