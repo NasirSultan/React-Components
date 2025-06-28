@@ -1,25 +1,16 @@
-import React, { useState } from 'react';
-import UserForm from './Button';
-import Values from './Values';
+import React, { useState } from "react";
+import Calculator from "./components/Calculator";
+import User from "./components/UserList";
 
-function App() {
-  const [userData, setUserData] = useState({ name: '', number: '' });
-
-  const handleFormSubmit = (formValues) => {
-    setUserData(formValues); // Form data received from child
-  };
+export default function App() {
+  const [view, setView] = useState("calc");
 
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>User Form</h1>
+    <div>
+      <button onClick={() => setView("calc")}>Calculator</button>
+      <button onClick={() => setView("user")}>User</button>
 
-      <UserForm onSubmit={handleFormSubmit} />
-
-      <div style={{ marginTop: '20px' }}>
-        <Values name={userData.name} number={userData.number} />
-      </div>
+      {view === "calc" ? <Calculator /> : <User />}
     </div>
   );
 }
-
-export default App;
