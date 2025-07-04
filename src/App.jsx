@@ -1,16 +1,13 @@
-import React, { useState } from "react";
-import Calculator from "./components/Calculator";
-import User from "./components/UserList";
+import React from "react";
+import UserList from "./components/UserList";
 
 export default function App() {
-  const [view, setView] = useState("calc");
-
   return (
-    <div>
-      <button onClick={() => setView("calc")}>Calculator</button>
-      <button onClick={() => setView("user")}>User</button>
-
-      {view === "calc" ? <Calculator /> : <User />}
+    <div className="min-h-screen bg-gray-100 p-8">
+      <div className="max-w-xl mx-auto bg-white shadow-md p-6 rounded">
+        <h1 className="text-2xl font-bold mb-4 text-center">User Fetcher</h1>
+        <UserList />
+      </div>
     </div>
   );
 }
