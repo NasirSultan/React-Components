@@ -1,26 +1,16 @@
-import React, { useState } from 'react';
-import UserForm from './Button';
-import Values from './Values';
+// ✅ App.jsx
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import UserComponent from './UserComponent';
+import UpdateUser from './UpdateUser';
 
-function App() {
-  const [submittedData, setSubmittedData] = useState(null);
-
-  const handleFormSubmit = (data) => {
-    setSubmittedData(data);
-  };
-
+const App = () => {
   return (
-    <div style={{ padding: '20px', fontFamily: 'Arial' }}>
-      <h1>User Form</h1>
-      <UserForm onSubmit={handleFormSubmit} />
-      
-      {submittedData && (
-        <div style={{ marginTop: '20px' }}>
-          <Values name={submittedData.name} number={submittedData.number} />
-        </div>
-      )}
-    </div>
+    <Routes>
+      <Route path="/" element={<UserComponent />} />
+      <Route path="/update/:id" element={<UpdateUser />} />
+    </Routes>
   );
-}
+};
 
 export default App;
